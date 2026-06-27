@@ -20,7 +20,7 @@
 .footer-grid{
   display:grid;
   grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
-  gap: 32px;
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
 }
