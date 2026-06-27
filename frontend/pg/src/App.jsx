@@ -3,11 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/navbar/Navbar'
-import HeroSection from './pages/herosection/HeroSection'
-import MissionSection from './pages/missionsection/MissionSection'
-import FacilitiesSection from './pages/FacillitiesSection/FacilitiesSection'
 import Footer from './components/footer/Footer'
-import LocationSection from './pages/locationsection/LocationSection'
 import SecurityStandard from './pages/safty/Securitystandard'
 import { Routes, Route } from 'react-router-dom'
 import LandingPage from './pages/LandingPage/LandingPage'
@@ -21,7 +17,7 @@ function App() {
   return (
     <>
       
-      <Navbar setContactFormVisible={setContactFormVisible} contactFormVisible={contactFormVisible} />
+      <Navbar />
       <Routes>
         <Route path='/' element={<LandingPage />} />
         <Route path='/safety' element={<SecurityStandard />} />
