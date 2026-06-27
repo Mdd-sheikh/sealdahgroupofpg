@@ -1,6 +1,10 @@
 import React from "react";
+<<<<<<< HEAD
 import "./LocationSection.css";
 import { Link } from "react-router-dom";
+=======
+import "./Locationsection.css";
+>>>>>>> b664937cddf52aaeeb89f537f5c87f2bfc9d9663
 
 const ADDRESS =
   "13, Dr Kartik Bose St, near University Carmichael Hostel, Sealdah, Baithakkhana, Kolkata, West Bengal 700009";

@@ -1,9 +1,13 @@
 import React from "react";
+<<<<<<< HEAD
 import "./RoomPlan.css";
 import { Link } from "react-router-dom";
 import image1 from "../../assets/images/image copy 2.png";
 import image2 from "../../assets/images/image copy 3.png";
 import image3 from "../../assets/images/image copy 4.png";
+=======
+import "./Roomplan.css";
+>>>>>>> b664937cddf52aaeeb89f537f5c87f2bfc9d9663
 
 const plans = [
     {
