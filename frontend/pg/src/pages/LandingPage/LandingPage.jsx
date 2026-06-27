@@ -2,7 +2,7 @@ import React from 'react'
 import HeroSection from '../herosection/HeroSection'
 import MissionSection from '../missionsection/MissionSection'
 import ComfortsSection from '../FacillitiesSection/FacilitiesSection'
-import LocationSection from '../locationsection/LocationSection'
+import LocationSection from '../locationsection/Locationsection'
 import PromiseSection from '../Promisesection/PromiseSection'
 
 const LandingPage = () => {
