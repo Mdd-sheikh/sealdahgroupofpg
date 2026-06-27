@@ -1,5 +1,5 @@
 import React from "react";
-import "./RoomPlan.css";
+import "./Roomplan.css";
 
 const plans = [
     {
