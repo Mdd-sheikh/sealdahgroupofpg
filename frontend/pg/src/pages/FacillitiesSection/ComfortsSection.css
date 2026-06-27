@@ -1,0 +1,198 @@
+:root{
+  --cream:#ffffff;
+  --ink:#1a1d29;
+  --sub:#6b7280;
+  --card-bg:#f3f4f6;
+  --icon-blue:#2b3a8f;
+  --green:#1f7a4d;
+  --shadow: 0 18px 34px -14px rgba(20,20,30,0.18);
+}
+
+.comforts *{ box-sizing:border-box; }
+
+@media (prefers-reduced-motion: reduce){
+  .comforts *{ animation:none !important; transition:none !important; }
+}
+
+.comforts{
+  background: var(--cream);
+  padding: 4vw 6vw 6vw;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  color: var(--ink);
+  position:relative;
+}
+
+/* ---------- HEADER ---------- */
+.comforts-header{
+  text-align:center;
+  max-width: 640px;
+  margin: 0 auto 3.5vw auto;
+}
+
+.comforts-header h2{
+  font-size: clamp(2rem, 3.6vw, 2.6rem);
+  font-weight:800;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.5px;
+  color: #6E2A36;
+
+}
+
+.comforts-header p{
+  font-size: 1.05rem;
+  color: var(--sub);
+  margin:0;
+  line-height:1.6;
+}
+
+/* ---------- GRID ---------- */
+.comforts-grid{
+  list-style:none;
+  margin:0;
+  padding:0;
+  max-width: 1200px;
+  margin-inline:auto;
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.comfort-card{
+  border-radius: 16px;
+  padding: 34px 20px 28px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap: 16px;
+  opacity:0;
+  transform: translateY(20px);
+  transition: transform .25s ease, box-shadow .25s ease;
+  animation: fadeUp .6s cubic-bezier(.22,.9,.32,1) forwards;
+}
+
+.comforts.in-view .comfort-card{
+  opacity:1;
+  transform: translateY(0);
+}
+
+.comfort-card:hover{
+  box-shadow: 0 20px 40px -16px white;
+
+}
+
+.comfort-card:nth-child(1){ animation-delay: .02s; }
+.comfort-card:nth-child(2){ animation-delay: .08s; }
+.comfort-card:nth-child(3){ animation-delay: .14s; }
+.comfort-card:nth-child(4){ animation-delay: .2s; }
+.comfort-card:nth-child(5){ animation-delay: .26s; }
+.comfort-card:nth-child(6){ animation-delay: .32s; }
+.comfort-card:nth-child(7){ animation-delay: .38s; }
+.comfort-card:nth-child(8){ animation-delay: .44s; }
+.comfort-card:nth-child(9){ animation-delay: .5s; }
+.comfort-card:nth-child(10){ animation-delay: .56s; }
+
+.comfort-card .ico{
+  width: 60px;
+  height: 60px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  color: var(--icon-blue);
+}
+.comfort-card .ico svg{ width:26px; height:26px; }
+
+.comfort-card h3{
+  font-size: 0.98rem;
+  font-weight:700;
+  margin:0;
+}
+
+@keyframes fadeUp{
+  to{ opacity:1; transform: translateY(0); }
+}
+
+/* ---------- FLOATING ACTION BUTTONS ---------- */
+/* Page-level controls shown alongside this section in the reference design.
+   Kept fixed to the viewport so they stay accessible while scrolling. */
+.fab-stack{
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap: 14px;
+  z-index: 50;
+}
+
+.fab-top{
+  width: 46px;
+  height: 46px;
+  border-radius:50%;
+  color:#fff;
+  border:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow: 0 10px 22px -8px rgba(43,58,143,0.55);
+  opacity:0;
+  pointer-events:none;
+  transform: translateY(10px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+.fab-top.visible{
+  opacity:1;
+  pointer-events:auto;
+  transform: translateY(0);
+}
+.fab-top svg{ width:20px; height:20px; }
+.fab-top:focus-visible{
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.fab-chat{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  background: var(--green);
+  color:#fff;
+  border:none;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-size: 0.92rem;
+  font-weight:600;
+  font-family: inherit;
+  cursor:pointer;
+  box-shadow: 0 10px 22px -8px rgba(31,122,77,0.55);
+  transition: transform .2s ease;
+}
+.fab-chat:hover{ transform: translateY(-2px); }
+.fab-chat svg{ width:18px; height:18px; }
+.fab-chat:focus-visible{
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 920px){
+  .comforts-grid{ grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px){
+  .comforts{ padding: 10vw 6vw 14vw; }
+  .comforts-grid{ grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .comfort-card{ padding: 26px 14px 22px; }
+  .fab-stack{ right: 16px; bottom: 16px; }
+  .fab-chat span.fab-chat-label{ display:none; }
+  .fab-chat{ padding: 12px; }
+}
+
+@media (max-width: 380px){
+  .comforts-grid{ grid-template-columns: 1fr 1fr; gap: 12px; }
+  .comfort-card h3{ font-size: 0.88rem; }
+}

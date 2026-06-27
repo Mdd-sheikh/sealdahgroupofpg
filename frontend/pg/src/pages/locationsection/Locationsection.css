@@ -1,0 +1,219 @@
+:root{
+  --ink:#1a1d29;
+  --sub:#6b7280;
+  --blue:#2b3a8f;
+  --blue-soft:#dbe3f7;
+  --green:#1f7a4d;
+  --green-soft:#d9f0e3;
+  --border: rgba(20,20,30,0.1);
+}
+
+.location *{ box-sizing:border-box; }
+
+@media (prefers-reduced-motion: reduce){
+  .location *{ animation:none !important; transition:none !important; }
+}
+
+.location{
+  background:#ffffff;
+  padding: 4vw 6vw 6vw;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  color: var(--ink);
+}
+
+.location-header{
+  text-align:center;
+  max-width: 640px;
+  margin: 0 auto 3vw auto;
+  opacity:0;
+  transform: translateY(14px);
+  animation: fadeUp .7s cubic-bezier(.22,.9,.32,1) forwards;
+}
+
+.location-header h2{
+  font-size: clamp(2rem, 3.6vw, 2.6rem);
+  font-weight:800;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.5px;
+  color: #6E2A36;
+}
+
+.location-header p{
+  font-size: 1.02rem;
+  color: var(--sub);
+  margin:0;
+}
+
+.location-grid{
+  display:grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items:start;
+}
+
+/* ---------- MAP ---------- */
+.map-frame{
+  border-radius: 16px;
+  overflow:hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 24px 48px -24px rgba(20,20,30,0.25);
+  opacity:0;
+  transform: translateX(-24px);
+  animation: slideInLeft .8s cubic-bezier(.22,.9,.32,1) forwards;
+  animation-delay: .15s;
+}
+
+.map-frame iframe{
+  display:block;
+  width: 100%;
+  height: 420px;
+  border: 0;
+}
+
+/* ---------- DETAILS ---------- */
+.location-details{
+  opacity:0;
+  transform: translateX(24px);
+  animation: slideInRight .8s cubic-bezier(.22,.9,.32,1) forwards;
+  animation-delay: .3s;
+}
+
+.detail-block{
+  display:flex;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.detail-block .ico{
+  flex-shrink:0;
+  width: 44px;
+  height: 44px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.detail-block .ico svg{ width:20px; height:20px; }
+
+.ico-blue{ background: var(--blue-soft); color: var(--blue); }
+.ico-green{ background: var(--green-soft); color: var(--green); }
+
+.detail-block h3{
+  font-size: 1.1rem;
+  font-weight:700;
+  margin: 4px 0 8px 0;
+}
+
+.detail-block address{
+  font-style:normal;
+  font-size: 0.92rem;
+  line-height:1.6;
+  color: var(--sub);
+  margin:0;
+}
+
+.landmark-list{
+  list-style:none;
+  margin: 4px 0 0 0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+}
+
+.landmark-list li{
+  display:flex;
+  align-items:flex-start;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: var(--sub);
+  line-height:1.5;
+}
+
+.landmark-list li::before{
+  content:"";
+  width: 7px;
+  height: 7px;
+  border-radius:50%;
+  background: var(--green);
+  margin-top: 7px;
+  flex-shrink:0;
+}
+
+/* ---------- ACTIONS ---------- */
+.location-actions{
+  display:flex;
+  gap: 14px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  font-family:inherit;
+  font-size: 0.92rem;
+  font-weight:600;
+  padding: 13px 22px;
+  border-radius: 10px;
+  cursor:pointer;
+  text-decoration:none;
+  border: 1.5px solid transparent;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn svg{ width:16px; height:16px; }
+.btn:hover{ transform: translateY(-2px); }
+
+.btn-primary{
+  background: #6E2A36;
+  color:#fff;
+  box-shadow: 0 12px 24px -10px rgba(43,58,143,0.55);
+}
+.btn-primary:hover{ background:#37161c; 
+ color:white;
+}
+
+.btn-secondary{
+  background: transparent;
+  color: #6E2A36;
+  border-color: #6E2A36;
+}
+.btn-secondary:hover{ 
+    background: #37161c;
+    color:white
+ }
+
+.btn:focus-visible{
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+/* ---------- KEYFRAMES ---------- */
+@keyframes fadeUp{
+  to{ opacity:1; transform: translateY(0); }
+}
+@keyframes slideInLeft{
+  to{ opacity:1; transform: translateX(0); }
+}
+@keyframes slideInRight{
+  to{ opacity:1; transform: translateX(0); }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 920px){
+  .location-grid{
+    grid-template-columns: 1fr;
+    gap: 10vw;
+  }
+  .map-frame iframe{ height: 360px; }
+}
+
+@media (max-width: 560px){
+  .location{ padding: 10vw 6vw 14vw; }
+  .map-frame iframe{ height: 300px; }
+  .detail-block{ gap: 12px; margin-bottom: 26px; }
+  .location-actions{ flex-direction:column; }
+  .btn{ justify-content:center; width:100%; }
+}

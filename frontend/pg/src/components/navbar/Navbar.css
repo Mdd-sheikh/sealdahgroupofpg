@@ -1,0 +1,272 @@
+/* ===== Navbar.css =====
+   Nestly navigation bar
+   Palette: Cream bg #F4EFE7 | Maroon #6E2A36 | Maroon hover #5A2129 | Gray text #6B6B68 | Charcoal #2E2A28
+   Tuned primarily for laptop / desktop / large monitors, with a mobile fallback.
+*/
+
+.site-header {
+    width: 100%;
+    background: #F4EFE7;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+
+
+}
+
+.navbar {
+    width: 100%;
+    border-bottom: 1px solid rgba(46, 42, 40, 0.06);
+}
+
+.navbar__inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 32px;
+    gap: 24px;
+}
+
+/* Brand */
+.navbar__brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #6E2A36;
+    flex-shrink: 0;
+}
+
+.navbar__pin {
+    color: #6E2A36;
+}
+
+.navbar__brand-text {
+    font-family: "Poppins", "Segoe UI", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+}
+
+/* Links */
+.navbar__links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: center;
+}
+
+.navbar__item {
+    position: relative;
+}
+
+.navbar__link {
+    position: relative;
+    display: inline-block;
+    padding: 6px 2px;
+    color: #6B6B68;
+    text-decoration: none;
+    font-family: "Inter", "Segoe UI", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.navbar__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background: #6E2A36;
+    border-radius: 1px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+.navbar__link:hover {
+    color: #6E2A36;
+}
+
+.navbar__link:hover::after {
+    transform: scaleX(1);
+}
+
+.navbar__link.is-active {
+    color: #6E2A36;
+    font-weight: 600;
+}
+
+.navbar__link.is-active::after {
+    transform: scaleX(1);
+}
+
+/* CTA */
+.navbar__cta {
+    background: #6E2A36;
+    color: #FBF7F2;
+    padding: 12px 28px;
+    border-radius: 999px;
+    font-family: "Inter", "Segoe UI", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.navbar__cta:hover {
+    background: #5A2129;
+    transform: translateY(-1px);
+}
+
+.navbar__cta:focus-visible,
+.navbar__link:focus-visible,
+.navbar__brand:focus-visible {
+    outline: 2px solid #6E2A36;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* Mobile toggle (hamburger) — hidden on laptop/desktop */
+.navbar__toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 28px;
+    height: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.navbar__toggle span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: #2E2A28;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar__toggle.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__toggle.is-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar__toggle.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ===== Large / wide desktop monitors ===== */
+@media (min-width: 1600px) {
+    .navbar__inner {
+        max-width: 1480px;
+        padding: 22px 40px;
+    }
+
+    .navbar__brand-text {
+        font-size: 22px;
+    }
+
+    .navbar__links {
+        gap: 44px;
+    }
+
+    .navbar__link {
+        font-size: 16px;
+    }
+
+    .navbar__cta {
+        font-size: 16px;
+        padding: 13px 30px;
+    }
+}
+
+/* ===== Tablet ===== */
+@media (max-width: 1024px) {
+    .navbar__links {
+        gap: 24px;
+    }
+
+    .navbar__inner {
+        padding: 16px 24px;
+    }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+    .navbar__toggle {
+        display: flex;
+    }
+
+    .navbar__links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        background: #F4EFE7;
+        border-bottom: 1px solid rgba(46, 42, 40, 0.08);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+        gap: 0;
+        justify-content: flex-start;
+    }
+
+    .navbar__links.is-open {
+        max-height: 400px;
+        padding: 8px 0 16px;
+    }
+
+    .navbar__item {
+        width: 100%;
+    }
+
+    .navbar__link {
+        display: block;
+        width: 100%;
+        padding: 12px 24px;
+    }
+
+    .navbar__link::after {
+        left: 24px;
+        right: 24px;
+        bottom: 6px;
+    }
+
+    .navbar__cta {
+        display: none;
+    }
+
+    .navbar {
+        position: relative;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .navbar__link::after,
+    .navbar__cta,
+    .navbar__toggle span,
+    .navbar__links {
+        transition: none;
+    }
+}
