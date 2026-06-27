@@ -1,5 +1,5 @@
 import React from "react";
-import "./LocationSection.css";
+import "./Locationsection.css";
 
 const ADDRESS =
   "13, Dr Kartik Bose St, near University Carmichael Hostel, Sealdah, Baithakkhana, Kolkata, West Bengal 700009";
