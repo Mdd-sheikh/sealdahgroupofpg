@@ -28,7 +28,9 @@ export default function HeroSection() {
           </p>
 
           <div className="cta-row">
-            <button className="btn btn-primary-frst">Book a Visit</button>
+           <Link to="/contact">
+              <button className="btn btn-primary-frst">Book a Visit</button>
+            </Link>
             <Link to="/room">
               <button className="btn btn-secondary-send">View Rooms</button>
             </Link>

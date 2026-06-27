@@ -25,6 +25,7 @@
     line-height: 30px;
     width: 100%;
     overflow: hidden;
+    align-content: center;
 }
 
 .contact-detail {
@@ -46,6 +47,7 @@
     text-overflow: ellipsis;
     flex: 1 1 auto;
     min-width: 0;
+    font-size: 14px;
 }
 
 /* ---------- PHONE / WHATSAPP / FACEBOOK ---------- */
@@ -76,8 +78,8 @@
 }
 
 .icon {
-    width: 13px;
-    height: 13px;
+    width: 20px;
+    height: 20px;
     flex-shrink: 0;
     display: inline-flex;
 }
@@ -223,10 +225,10 @@
     position: relative;
     display: inline-block;
     padding: 6px 2px;
-    color: #6B6B68;
+    color: #2d2d2c;
     text-decoration: none;
     font-family: "Inter", "Segoe UI", sans-serif;
-    font-size: 15px;
+    font-size: 19px;
     font-weight: 500;
     transition: color 0.2s ease;
 }
@@ -269,7 +271,7 @@
     padding: 12px 28px;
     border-radius: 999px;
     font-family: "Inter", "Segoe UI", sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     text-decoration: none;
     white-space: nowrap;

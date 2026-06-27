@@ -1,5 +1,6 @@
 import React from "react";
 import "./LocationSection.css";
+import { Link } from "react-router-dom";
 
 const ADDRESS =
   "13, Dr Kartik Bose St, near University Carmichael Hostel, Sealdah, Baithakkhana, Kolkata, West Bengal 700009";
@@ -91,9 +92,11 @@ export default function LocationSection() {
               </svg>
               Get Directions
             </a>
-            <a className="btn btn-secondary" href="#book-a-visit">
-              Book a Visit
-            </a>
+            <Link to="/contact">
+              <button className="btn btn-secondary">
+                Book a Visit
+              </button>
+            </Link>
           </div>
 
         </div>

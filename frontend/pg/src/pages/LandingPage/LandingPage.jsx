@@ -1,9 +1,9 @@
 import React from 'react'
 import HeroSection from '../herosection/HeroSection'
-import MissionSection from '../missionsection/MissionSection'
 import ComfortsSection from '../FacillitiesSection/FacilitiesSection'
 import LocationSection from '../locationsection/LocationSection'
 import PromiseSection from '../Promisesection/PromiseSection'
+import Gallery from '../gallery/Gallery'
 
 const LandingPage = () => {
   return (
@@ -15,7 +15,7 @@ const LandingPage = () => {
         <PromiseSection/>
       </div>
      <div className="missionsection">
-        <MissionSection/>
+        <Gallery/>
      </div>
      
      <div className="location">

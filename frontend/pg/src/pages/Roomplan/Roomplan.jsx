@@ -1,11 +1,15 @@
 import React from "react";
 import "./RoomPlan.css";
+import { Link } from "react-router-dom";
+import image1 from "../../assets/images/image copy 2.png";
+import image2 from "../../assets/images/image copy 3.png";
+import image3 from "../../assets/images/image copy 4.png";
 
 const plans = [
     {
         id: "solo",
         name: "Solo Sanctuary",
-        price: "₹18,500",
+        price: "₹6,000",
         tag: "Highly Coveted",
         tagVariant: "default",
         desc:
@@ -17,13 +21,13 @@ const plans = [
             "En-suite Bathroom",
         ],
         image:
-            "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=600&auto=format&fit=crop",
+            image1,
         featured: false,
     },
     {
         id: "duo",
         name: "Duo Haven",
-        price: "₹12,000",
+        price: "₹4,000",
         tag: "Most Popular",
         tagVariant: "popular",
         desc:
@@ -35,13 +39,13 @@ const plans = [
             "Shared Media Console",
         ],
         image:
-            "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=600&auto=format&fit=crop",
+            image2,
         featured: true,
     },
     {
         id: "trio",
         name: "Trio Collective",
-        price: "₹8,500",
+        price: "₹3,000",
         tag: null,
         desc:
             "Affordable, vibrant, and community-focused. Designed for the outgoing student who loves the spirit of sisterhood.",
@@ -52,7 +56,7 @@ const plans = [
             "Weekly Linen Service",
         ],
         image:
-            "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=600&auto=format&fit=crop",
+            image3,
         featured: false,
     },
 ];
