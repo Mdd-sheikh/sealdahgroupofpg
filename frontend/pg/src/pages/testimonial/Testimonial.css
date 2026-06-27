@@ -1,0 +1,236 @@
+:root {
+    --cream: #F4F1EA;
+    --ink: #241F1C;
+    --sub: #6b6460;
+    --rose: #9C4A4F;
+    --star: #C97D3F;
+    --border: rgba(36, 31, 28, 0.08);
+}
+
+.testimonials * {
+    box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .testimonials .track {
+        transition: none !important;
+    }
+
+    .testimonials .t-header {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+.testimonials {
+    background: var(--cream);
+    padding: 5vw 0 6vw;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    color: var(--ink);
+    overflow: hidden;
+}
+
+.testimonials-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 6vw;
+}
+
+/* ---------- HEADER ---------- */
+.t-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 2.6vw;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: fadeUp .7s cubic-bezier(.22, .9, .32, 1) forwards;
+}
+
+.t-header h2 {
+    font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+.t-header p {
+    font-size: 0.94rem;
+    line-height: 1.6;
+    color: var(--sub);
+    margin: 0;
+    max-width: 460px;
+}
+
+.t-nav {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.t-nav button {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--ink);
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.t-nav button svg {
+    width: 16px;
+    height: 16px;
+}
+
+.t-nav button:hover {
+    background: var(--rose);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.t-nav button:focus-visible {
+    outline: 2px solid var(--rose);
+    outline-offset: 2px;
+}
+
+/* ---------- VIEWPORT / TRACK ---------- */
+.t-viewport {
+    overflow: hidden;
+    margin: 0 -6vw;
+    padding: 0 6vw;
+}
+
+.track {
+    display: flex;
+    gap: 22px;
+    transition: transform .6s cubic-bezier(.22, .9, .32, 1);
+    will-change: transform;
+}
+
+.t-card {
+    flex: 0 0 calc(38% - 11px);
+    background: #fff;
+    border-radius: 18px;
+    padding: 28px 26px;
+    display: flex;
+    flex-direction: column;
+}
+
+.stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 16px;
+}
+
+.stars svg {
+    width: 16px;
+    height: 16px;
+    color: var(--star);
+}
+
+.t-card blockquote {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    font-style: italic;
+    color: var(--ink);
+    margin: 0 0 22px 0;
+}
+
+.t-person {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.t-person img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.t-person figcaption {
+    line-height: 1.3;
+}
+
+.t-person .name {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.t-person .role {
+    font-size: 0.78rem;
+    color: var(--rose);
+}
+
+/* ---------- DOTS ---------- */
+.t-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 2.2vw;
+}
+
+.t-dots button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.t-dots button.active {
+    background: var(--rose);
+    transform: scale(1.25);
+}
+
+.t-dots button:focus-visible {
+    outline: 2px solid var(--rose);
+    outline-offset: 3px;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 880px) {
+    .t-card {
+        flex: 0 0 calc(55% - 11px);
+    }
+}
+
+@media (max-width: 600px) {
+    .testimonials {
+        padding: 11vw 0 12vw;
+    }
+
+    .t-viewport {
+        margin: 0 -6vw;
+        padding: 0 6vw;
+    }
+
+    .t-card {
+        flex: 0 0 88%;
+        padding: 22px 20px;
+    }
+
+    .t-header {
+        flex-direction: column;
+    }
+}

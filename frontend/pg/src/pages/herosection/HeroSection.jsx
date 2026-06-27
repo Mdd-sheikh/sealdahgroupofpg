@@ -1,5 +1,6 @@
 import React from "react";
 import "./HeroSection.css";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   return (
@@ -28,7 +29,9 @@ export default function HeroSection() {
 
           <div className="cta-row">
             <button className="btn btn-primary-frst">Book a Visit</button>
-            <button className="btn btn-secondary-send">View Rooms</button>
+            <Link to="/room">
+              <button className="btn btn-secondary-send">View Rooms</button>
+            </Link>
           </div>
         </div>
 

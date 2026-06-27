@@ -1,0 +1,655 @@
+:root {
+    --cream: #F4F1EA;
+    --ink: #241F1C;
+    --sub: #6b6460;
+    --eyebrow: #9C4A4F;
+
+    --card-white: #FBF8F4;
+    --card-rose-soft: #F3D9D9;
+    --rose-icon: #B5495A;
+
+    --card-green: #3a5446;
+    --card-purple-soft: #E3DCF3;
+    --purple-icon: #6B4FA0;
+
+    --card-pink-soft: #F6D9DC;
+    --pink-icon: #B5495A;
+
+    --card-rose-deep: #7A363B;
+}
+
+.security * {
+    box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .security * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+.security {
+    background: var(--cream);
+    padding: 5vw 6vw;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    color: var(--ink);
+}
+
+/* ---------- INTRO: Your Peace of Mind is Our Priority ---------- */
+.security-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4vw;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 6vw auto;
+}
+
+.intro-text {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: fadeUp .8s cubic-bezier(.22, .9, .32, 1) forwards;
+}
+
+.intro-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #DCEFE3;
+    color: #3F7A5A;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+}
+
+.intro-badge svg {
+    width: 14px;
+    height: 14px;
+}
+
+.intro-heading {
+    font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--eyebrow);
+    margin: 0 0 18px 0;
+    letter-spacing: -0.4px;
+}
+
+.intro-desc {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--ink);
+    max-width: 460px;
+    margin: 0 0 26px 0;
+}
+
+.intro-checklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.intro-checklist li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.intro-checklist svg {
+    width: 17px;
+    height: 17px;
+    color: #3F7A5A;
+    flex-shrink: 0;
+}
+
+.intro-image {
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px -24px rgba(36, 31, 28, 0.3);
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+    animation: fadeUp .9s cubic-bezier(.22, .9, .32, 1) forwards;
+    animation-delay: .15s;
+}
+
+.intro-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+}
+
+.security-header {
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto 3vw auto;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: fadeUp .7s cubic-bezier(.22, .9, .32, 1) forwards;
+}
+
+.security-header h2 {
+    font-size: clamp(1.7rem, 2.8vw, 2.2rem);
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.3px;
+}
+
+.security-header p {
+    font-size: 0.96rem;
+    line-height: 1.6;
+    color: var(--sub);
+    margin: 0;
+}
+
+.security-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 1200px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(170px, auto);
+    gap: 22px;
+}
+
+.sec-card {
+    border-radius: 18px;
+    padding: 28px 26px;
+    opacity: 0;
+    transform: translateY(22px);
+    animation: fadeUp .7s cubic-bezier(.22, .9, .32, 1) forwards;
+}
+
+.sec-card:nth-child(1) {
+    animation-delay: .05s;
+}
+
+.sec-card:nth-child(2) {
+    animation-delay: .15s;
+}
+
+.sec-card:nth-child(3) {
+    animation-delay: .25s;
+}
+
+.sec-card:nth-child(4) {
+    animation-delay: .35s;
+}
+
+.sec-card:nth-child(5) {
+    animation-delay: .45s;
+}
+
+.sec-card .ico {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.sec-card .ico svg {
+    width: 22px;
+    height: 22px;
+}
+
+.sec-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.sec-card p {
+    font-size: 0.87rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* card 1: 24/7 Guarding */
+.card-guarding {
+    background: var(--card-white);
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.card-guarding .ico {
+    background: var(--card-rose-soft);
+    color: var(--rose-icon);
+}
+
+.card-guarding p {
+    color: var(--sub);
+}
+
+/* card 2: Full CCTV Coverage (large, spans 2 rows) */
+.card-cctv {
+    background: var(--card-rose-deep);
+    color: #fff;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-cctv .ico {
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+}
+
+.card-cctv p {
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 20px;
+}
+
+.cctv-checklist {
+    list-style: none;
+    margin: auto 0 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cctv-checklist li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.cctv-checklist svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* card 3: Safe Curfew & Visitor Policy */
+.card-curfew {
+    background: var(--card-white);
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.card-curfew .ico {
+    background: var(--card-purple-soft);
+    color: var(--purple-icon);
+}
+
+.card-curfew p {
+    color: var(--sub);
+}
+
+/* card 4: Female-Only Premises */
+.card-female {
+    background: #DDEBE2;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.card-female .ico {
+    background: var(--card-green);
+    color: #fff;
+}
+
+.card-female p {
+    color: #45594d;
+}
+
+/* card 5: Biometric Access */
+.card-biometric {
+    background: var(--card-white);
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.card-biometric .ico {
+    background: var(--card-pink-soft);
+    color: var(--pink-icon);
+}
+
+.card-biometric p {
+    color: var(--sub);
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 920px) {
+    .security-intro {
+        grid-template-columns: 1fr;
+        gap: 8vw;
+        margin-bottom: 10vw;
+    }
+
+    .intro-image {
+        order: -1;
+    }
+
+    .intro-desc {
+        max-width: 100%;
+    }
+
+    .security-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(160px, auto);
+    }
+
+    .card-guarding {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .card-curfew {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .card-cctv {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+    }
+
+    .card-female {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .card-biometric {
+        grid-column: 2;
+        grid-row: 3;
+    }
+}
+
+@media (max-width: 600px) {
+    .security {
+        padding: 12vw 6vw;
+    }
+
+    .security-intro {
+        margin-bottom: 12vw;
+    }
+
+    .intro-checklist {
+        gap: 14px 18px;
+    }
+
+    .security-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-guarding,
+    .card-curfew,
+    .card-cctv,
+    .card-female,
+    .card-biometric {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .sec-card {
+        padding: 24px 20px;
+    }
+}
+
+
+/*----------------testimonials------------------*/
+:root {
+    --cream: #F4F1EA;
+    --ink: #241F1C;
+    --sub: #6b6460;
+    --rose: #9C4A4F;
+    --star: #C97D3F;
+    --border: rgba(36, 31, 28, 0.08);
+}
+
+.testimonials * {
+    box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .testimonials .track {
+        transition: none !important;
+    }
+
+    .testimonials .t-header {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+.testimonials {
+    background: var(--cream);
+    padding: 5vw 0 6vw;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    color: var(--ink);
+    overflow: hidden;
+}
+
+.testimonials-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 6vw;
+}
+
+/* ---------- HEADER ---------- */
+.t-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 2.6vw;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: fadeUp .7s cubic-bezier(.22, .9, .32, 1) forwards;
+}
+
+.t-header h2 {
+    font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+.t-header p {
+    font-size: 0.94rem;
+    line-height: 1.6;
+    color: var(--sub);
+    margin: 0;
+    max-width: 460px;
+}
+
+.t-nav {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.t-nav button {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--ink);
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.t-nav button svg {
+    width: 16px;
+    height: 16px;
+}
+
+.t-nav button:hover {
+    background: var(--rose);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.t-nav button:focus-visible {
+    outline: 2px solid var(--rose);
+    outline-offset: 2px;
+}
+
+/* ---------- VIEWPORT / TRACK ---------- */
+.t-viewport {
+    overflow: hidden;
+    margin: 0 -6vw;
+    padding: 0 6vw;
+}
+
+.track {
+    display: flex;
+    gap: 22px;
+    transition: transform .6s cubic-bezier(.22, .9, .32, 1);
+    will-change: transform;
+}
+
+.t-card {
+    flex: 0 0 calc(38% - 11px);
+    background: #fff;
+    border-radius: 18px;
+    padding: 28px 26px;
+    display: flex;
+    flex-direction: column;
+}
+
+.stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 16px;
+}
+
+.stars svg {
+    width: 16px;
+    height: 16px;
+    color: var(--star);
+}
+
+.t-card blockquote {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    font-style: italic;
+    color: var(--ink);
+    margin: 0 0 22px 0;
+}
+
+.t-person {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.t-person img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.t-person figcaption {
+    line-height: 1.3;
+}
+
+.t-person .name {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.t-person .role {
+    font-size: 0.78rem;
+    color: var(--rose);
+}
+
+/* ---------- DOTS ---------- */
+.t-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 2.2vw;
+}
+
+.t-dots button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.t-dots button.active {
+    background: var(--rose);
+    transform: scale(1.25);
+}
+
+.t-dots button:focus-visible {
+    outline: 2px solid var(--rose);
+    outline-offset: 3px;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 880px) {
+    .t-card {
+        flex: 0 0 calc(55% - 11px);
+    }
+}
+
+@media (max-width: 600px) {
+    .testimonials {
+        padding: 11vw 0 12vw;
+    }
+
+    .t-viewport {
+        margin: 0 -6vw;
+        padding: 0 6vw;
+    }
+
+    .t-card {
+        flex: 0 0 88%;
+        padding: 22px 20px;
+    }
+
+    .t-header {
+        flex-direction: column;
+    }
+}

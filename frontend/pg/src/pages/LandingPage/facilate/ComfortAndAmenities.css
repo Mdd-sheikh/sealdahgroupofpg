@@ -1,0 +1,367 @@
+:root {
+    --cream: #F4F1EA;
+    --ink: #241F1C;
+    --sub: #6b6460;
+    --rose: #9C4A4F;
+
+    --green-pill: #DCEFE3;
+    --green-pill-text: #3F7A5A;
+    --pink-pill: #F6D9DC;
+    --pink-pill-text: #B5495A;
+
+    --card-bg: #FBF8F4;
+    --icon-blue: #5B6BC0;
+    --eyebrow: #9C4A4F;
+}
+
+.comfort-page * {
+    box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .comfort-page * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+.comfort-page {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    color: var(--ink);
+}
+
+/* =====================================================
+   DIV 1 — Every Comfort of Home
+===================================================== */
+.comfort-hero {
+    background: var(--cream);
+    padding: 5vw 6vw;
+}
+
+.comfort-hero-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 4vw;
+    align-items: center;
+}
+
+.comfort-copy {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp .85s cubic-bezier(.22, .9, .32, 1) forwards;
+}
+
+.comfort-copy h2 {
+    font-size: clamp(2rem, 3.4vw, 2.7rem);
+    font-weight: 800;
+    line-height: 1.12;
+    margin: 0 0 18px 0;
+    letter-spacing: -0.5px;
+}
+
+.comfort-copy h2 .accent {
+    display: block;
+    color: var(--rose);
+}
+
+.comfort-copy p {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--sub);
+    max-width: 440px;
+    margin: 0 0 26px 0;
+}
+
+.comfort-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.comfort-pills li {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    list-style: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 9px 16px;
+    border-radius: 999px;
+}
+
+.comfort-pills li svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+.pill-green {
+    background: var(--green-pill);
+    color: var(--green-pill-text);
+}
+
+.pill-pink {
+    background: var(--pink-pill);
+    color: var(--pink-pill-text);
+}
+
+.comfort-visual {
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    animation: fadeUp .95s cubic-bezier(.22, .9, .32, 1) forwards;
+    animation-delay: .18s;
+}
+
+.comfort-image {
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px -26px rgba(36, 31, 28, 0.3);
+    aspect-ratio: 4 / 3;
+}
+
+.comfort-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.comfort-float-card {
+    position: absolute;
+    bottom: -8%;
+    left: -6%;
+    background: #fff;
+    border-radius: 16px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 18px 34px -14px rgba(36, 31, 28, 0.25);
+    opacity: 0;
+    animation: fadeUp .7s ease forwards;
+    animation-delay: .5s;
+    max-width: 230px;
+}
+
+.comfort-float-card .ico {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #E7E1F5;
+    color: #6B4FA0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.comfort-float-card .ico svg {
+    width: 18px;
+    height: 18px;
+}
+
+.comfort-float-card .title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.comfort-float-card .sub {
+    font-size: 0.72rem;
+    color: var(--sub);
+}
+
+/* =====================================================
+   DIV 2 — Designed for Your Success (amenities grid)
+===================================================== */
+.amenities {
+    background: var(--cream);
+    padding: 4vw 6vw 6vw;
+}
+
+.amenities-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3vw auto;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: fadeUp .7s cubic-bezier(.22, .9, .32, 1) forwards;
+}
+
+.amenities-eyebrow {
+    display: block;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--eyebrow);
+    margin-bottom: 10px;
+}
+
+.amenities-header h2 {
+    font-size: clamp(1.7rem, 2.8vw, 2.2rem);
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+
+.amenities-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 1200px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.amenity-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 26px 22px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp .7s cubic-bezier(.22, .9, .32, 1) forwards;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.amenity-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -18px rgba(36, 31, 28, 0.16);
+}
+
+.amenity-card:nth-child(1) {
+    animation-delay: .03s;
+}
+
+.amenity-card:nth-child(2) {
+    animation-delay: .08s;
+}
+
+.amenity-card:nth-child(3) {
+    animation-delay: .13s;
+}
+
+.amenity-card:nth-child(4) {
+    animation-delay: .18s;
+}
+
+.amenity-card:nth-child(5) {
+    animation-delay: .23s;
+}
+
+.amenity-card:nth-child(6) {
+    animation-delay: .28s;
+}
+
+.amenity-card:nth-child(7) {
+    animation-delay: .33s;
+}
+
+.amenity-card:nth-child(8) {
+    animation-delay: .38s;
+}
+
+.amenity-card .ico {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.amenity-card .ico svg {
+    width: 20px;
+    height: 20px;
+}
+
+.icon-green {
+    background: var(--green-pill);
+    color: var(--green-pill-text);
+}
+
+.icon-pink {
+    background: var(--pink-pill);
+    color: var(--pink-pill-text);
+}
+
+.icon-purple {
+    background: #E3DCF3;
+    color: #6B4FA0;
+}
+
+.amenity-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+}
+
+.amenity-card p {
+    font-size: 0.84rem;
+    line-height: 1.55;
+    color: var(--sub);
+    margin: 0;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 980px) {
+    .comfort-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 10vw;
+    }
+
+    .comfort-visual {
+        order: -1;
+    }
+
+    .comfort-copy p {
+        max-width: 100%;
+    }
+
+    .comfort-float-card {
+        left: 4%;
+        bottom: -6%;
+    }
+
+    .amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .comfort-hero {
+        padding: 12vw 6vw 16vw;
+    }
+
+    .comfort-float-card {
+        max-width: 200px;
+        padding: 12px 14px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -10%;
+    }
+
+    .amenities {
+        padding: 10vw 6vw 14vw;
+    }
+
+    .amenities-grid {
+        grid-template-columns: 1fr;
+    }
+}
