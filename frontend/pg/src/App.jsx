@@ -17,12 +17,10 @@ import ContactUs from './pages/contact/ContactUs'
 
 function App() {
 
-  const [contactFormVisible, setContactFormVisible] = useState(false);
-
 
   return (
     <>
-      {contactFormVisible ? <ContactUs /> : null}
+      
       <Navbar setContactFormVisible={setContactFormVisible} contactFormVisible={contactFormVisible} />
       <Routes>
         <Route path='/' element={<LandingPage />} />
