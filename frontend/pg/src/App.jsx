@@ -9,7 +9,7 @@ import LandingPage from './pages/LandingPage/LandingPage'
 import RoomPlans from './pages/Roomplan/Roomplan'
 import ComfortAndAmenities from './pages/LandingPage/facilate/ComfortAndAmenities'
 import ContactUs from './pages/contact/ContactUs'
-import SecurityStandard from './pages/safty/Securitystandard'
+import SecurityStandard from './pages/safty/SecurityStandard'
 
 function App() {
 
